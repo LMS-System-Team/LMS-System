@@ -40,7 +40,6 @@ php artisan key:generate
 The default `.env.example` uses SQLite. Create the SQLite database file before running migrations:
 
 ```bash
-php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
 php artisan migrate
 ```
 
@@ -60,7 +59,7 @@ DB_PASSWORD=
 Start the Laravel server, queue listener, and Vite dev server:
 
 ```bash
-composer dev
+composer run dev
 ```
 
 Then open the app in your browser:
@@ -73,56 +72,6 @@ If you use Laravel Herd or Valet and your `.env` has `APP_URL=http://lms-system.
 
 ```text
 http://lms-system.test
-```
-
-`npm run dev` only starts the Vite frontend asset server. It does not serve Laravel routes, controllers, or API requests. The Vite URL, usually `http://localhost:5173`, is used internally by Laravel to load hot-reloaded CSS and JavaScript.
-
-You can also run the processes separately in different terminals:
-
-```bash
-php artisan serve
-php artisan queue:listen --tries=1
-npm run dev
-```
-
-## Build Assets
-
-```bash
-npm run build
-```
-
-## Checks Before Pushing
-
-Run the same combined check used for local confidence:
-
-```bash
-composer ci:check
-```
-
-This runs:
-
-- ESLint
-- Prettier format check
-- TypeScript type check
-- Laravel Pint check
-- PHPStan analysis
-- Pest tests
-
-You can also run PHP-side checks only:
-
-```bash
-composer test
-```
-
-## Useful Commands
-
-```bash
-php artisan migrate:fresh
-php artisan route:list
-php artisan config:clear
-npm run types:check
-npm run lint:check
-npm run format:check
 ```
 
 ## GitHub Actions
