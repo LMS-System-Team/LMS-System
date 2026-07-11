@@ -27,8 +27,13 @@ export function NavMain({ items = [] }: { items: NavItem[] }) {
             <SidebarMenu>
                 {items.map((item) => {
                     const hasChildren = Boolean(item.children?.length);
+                    const hasActiveChild = Boolean(
+                        item.children?.some((child) =>
+                            isCurrentOrParentUrl(child.href),
+                        ),
+                    );
                     const isActive = hasChildren
-                        ? isCurrentOrParentUrl(item.href)
+                        ? isCurrentOrParentUrl(item.href) || hasActiveChild
                         : isCurrentUrl(item.href);
 
                     if (hasChildren) {

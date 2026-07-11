@@ -1,5 +1,12 @@
 import { Link } from '@inertiajs/react';
-import { LayoutGrid, Users } from 'lucide-react';
+import {
+    BookOpen,
+    FolderOpen,
+    LayoutGrid,
+    LibraryBig,
+    UserRound,
+    Users,
+} from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
@@ -30,6 +37,24 @@ const mainNavItems: NavItem[] = [
             {
                 title: 'Users',
                 href: usersIndex(),
+                icon: UserRound,
+            },
+        ],
+    },
+    {
+        title: 'LMS Content',
+        href: '/learning-materials',
+        icon: BookOpen,
+        children: [
+            {
+                title: 'Categories',
+                href: '/categories',
+                icon: FolderOpen,
+            },
+            {
+                title: 'Learning Materials',
+                href: '/learning-materials',
+                icon: LibraryBig,
             },
         ],
     },
