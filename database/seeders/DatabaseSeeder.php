@@ -50,7 +50,5 @@ class DatabaseSeeder extends Seeder
 
             $createdUser->syncRoles([$user['role']]);
         }
-
-        $this->call(LmsContentSeeder::class);
     }
 }
