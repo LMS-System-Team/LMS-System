@@ -34,6 +34,34 @@ class RolePermissionSeeder extends Seeder
             'learning-materials.create',
             'learning-materials.update',
             'learning-materials.delete',
+            'classes.view',
+            'classes.create',
+            'classes.update',
+            'classes.delete',
+            'faculties.view',
+            'faculties.create',
+            'faculties.update',
+            'faculties.delete',
+            'programs.view',
+            'programs.create',
+            'programs.update',
+            'programs.delete',
+            'academic-years.view',
+            'academic-years.create',
+            'academic-years.update',
+            'academic-years.delete',
+            'semesters.view',
+            'semesters.create',
+            'semesters.update',
+            'semesters.delete',
+            'courses.view',
+            'courses.create',
+            'courses.update',
+            'courses.delete',
+            'assignments.view',
+            'assignments.create',
+            'assignments.update',
+            'assignments.delete',
         ];
 
         foreach ($permissions as $permission) {
@@ -55,6 +83,8 @@ class RolePermissionSeeder extends Seeder
 
         $user->syncPermissions($permissionModels->only([
             'learning-materials.view',
+            'classes.view',
+            'assignments.view',
         ])->values());
 
         $professor->syncPermissions($permissionModels->only([
@@ -63,6 +93,12 @@ class RolePermissionSeeder extends Seeder
             'learning-materials.create',
             'learning-materials.update',
             'learning-materials.delete',
+            'classes.view',
+            'courses.view',
+            'assignments.view',
+            'assignments.create',
+            'assignments.update',
+            'assignments.delete',
         ])->values());
 
         $admin->syncPermissions($permissionModels->values());

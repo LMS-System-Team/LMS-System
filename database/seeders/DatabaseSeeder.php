@@ -50,5 +50,9 @@ class DatabaseSeeder extends Seeder
 
             $createdUser->syncRoles([$user['role']]);
         }
+
+        $this->call(FacultySeeder::class);
+        $this->call(ProgramSeeder::class);
+        $this->call(AcademicClassSeeder::class);
     }
 }

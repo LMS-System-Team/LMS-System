@@ -1,11 +1,17 @@
 import { Link } from '@inertiajs/react';
 import {
     BookOpen,
+    Building2,
+    CalendarDays,
+    CalendarRange,
     FolderOpen,
+    GraduationCap,
     LayoutGrid,
     LibraryBig,
     KeyRound,
     MonitorPlay,
+    Network,
+    School,
     Shield,
     UserRound,
     Users,
@@ -31,6 +37,43 @@ const mainNavItems: NavItem[] = [
         title: 'Dashboard',
         href: dashboard(),
         icon: LayoutGrid,
+    },
+    {
+        title: 'My Classes',
+        href: '/classes',
+        icon: GraduationCap,
+    },
+    {
+        title: 'Academic Management',
+        href: '/academic/faculties',
+        icon: School,
+        children: [
+            {
+                title: 'Faculties',
+                href: '/academic/faculties',
+                icon: Building2,
+            },
+            {
+                title: 'Programs',
+                href: '/academic/programs',
+                icon: Network,
+            },
+            {
+                title: 'Academic Years',
+                href: '/academic/academic-years',
+                icon: CalendarRange,
+            },
+            {
+                title: 'Semesters',
+                href: '/academic/semesters',
+                icon: CalendarDays,
+            },
+            {
+                title: 'Classes',
+                href: '/academic/classes',
+                icon: GraduationCap,
+            },
+        ],
     },
     {
         title: 'User Management',

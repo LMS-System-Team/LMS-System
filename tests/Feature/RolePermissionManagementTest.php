@@ -23,7 +23,7 @@ test('authenticated users can view role and permission management pages', functi
     $this->get(route('roles.create'))
         ->assertInertia(fn (Assert $page) => $page
             ->component('roles/create')
-            ->has('permissions', 17)
+            ->has('permissions', 45)
             ->etc()
         );
 
